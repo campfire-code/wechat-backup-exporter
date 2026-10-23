@@ -1,0 +1,10 @@
+{
+  "id": "w20",
+  "slug": "wechat-backup-exporter",
+  "name": "手机备份聊天导出（本人数据）",
+  "version": "1.9.5.13-campfire.1",
+  "repo": "campfire-code/wechat-backup-exporter",
+  "license": "GPL-2.0",
+  "delivery": "mirror",
+  "upstream": { "repo": "BlueMatthew/WechatExporter", "license": "GPL-2.0", "tag": "v1.9.5.13" }
+}

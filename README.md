@@ -1,3 +1,59 @@
+# 手机备份聊天导出（本人数据）
+
+> 篝火出品 · 收录于篝火 App 应用区 · 基于开源项目 [BlueMatthew/WechatExporter](https://github.com/BlueMatthew/WechatExporter)（GPL-2.0）
+
+把**自己 iPhone 备份里的微信聊天记录**导出成 HTML / PDF / 文本，在电脑本地保存和查看。全程在本机处理。
+
+> [!IMPORTANT]
+> **只导出你本人的数据。** 请只用于导出自己手机、自己账号的聊天记录；不要导出、翻看或传播他人的备份和隐私。使用者自行承担合规责任。
+
+## 下载
+
+到 [Releases](https://github.com/campfire-code/wechat-backup-exporter/releases/latest) 下载：
+
+| 电脑 | 文件 |
+|---|---|
+| Windows 7 及以上（64 位） | `wechat-backup-exporter_版本号_v1.9.5.13-x64-win.zip` |
+| Mac（Intel 版，M 系列芯片靠 Rosetta 运行） | `wechat-backup-exporter_版本号_v1.9.5.13-x64-macos.zip` |
+
+- 压缩包来自上游官方发布，篝火没有修改，附 `SHA256SUMS.txt` 可核对。解压后直接运行，无需安装。
+- 上游另有命令行版（`-cmd.zip`），本仓库不转发布。
+- Windows 如果提示缺少 dll，请先安装 [Visual C++ 2017 redist](https://aka.ms/vs/16/release/vc_redist.x64.exe)。
+- **本机（macOS）未实测**：篝火整理时没有 iPhone 备份可用，Windows 版也未实测，以上均依据上游文档。
+
+## 怎么用
+
+1. 用 iTunes（Mac 用访达）把 iPhone 备份到电脑，**备份时不要设置加密口令**。Android 手机需要先把聊天记录迁移到一台 iPhone / iPad 再备份（见上游说明）。
+2. 解压下载的压缩包，运行 `WechatExport.exe`（Windows）或 `WechatExporter`（Mac）。
+3. 按界面提示选择备份和导出目录，选择要导出的聊天与格式（HTML / PDF / 文本）。
+4. 在菜单「选项」里可以设置：页面加载方式、过滤功能、**增量导出**（只导出上次之后的新消息）。
+
+**说明**
+- 软件界面以中文为主，文字说明来自上游。
+- 导出 PDF 需要电脑装有 Chrome 或 Edge，耗时较长，请不要关闭自动弹出的命令行窗口。
+- 软件启动时会向上游作者的服务器（`src.wakin.org`）请求一次更新信息，请求里带当前版本号；除此之外聊天内容不会上传。
+- 日志检查：源码中没有把密钥、口令明文打印到日志的写法（按关键词检索，非逐行审计）。
+
+## 验收用例
+
+| 操作 | 应得到 |
+|---|---|
+| 准备一份未加密的 iPhone iTunes 备份，选择一个聊天导出为 HTML | 导出目录里生成 HTML 页面，用浏览器能看到文字、图片和语音 |
+| 勾选增量导出，同一聊天再导一次 | 第二次只包含上次之后的新消息 |
+
+## 和上游的区别
+
+- 仅新增中文说明与篝火发布流程（`tool.json`、`.github/workflows/release.yml`），软件代码与上游一致。
+- 上游 1.8.0.8 之前的版本有异步加载的已知 bug，本仓库转发布的是 1.9.5.13，不受影响。
+
+## 归属与许可证
+
+本仓库由**篝火**整理发布，是篝火 App 应用区收录的开源工具之一。软件全部功能与版权归 [BlueMatthew/WechatExporter](https://github.com/BlueMatthew/WechatExporter) 原作者所有，按 GPL-2.0 许可证再分发，源码即本仓库。全部工具目录见 [toolkit-hub](https://github.com/campfire-code/toolkit-hub)。
+
+---
+
+以下为上游原始说明：
+
 # WechatExporter
   
  
