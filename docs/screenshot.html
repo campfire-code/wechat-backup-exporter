@@ -1,12 +1,43 @@
-<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>手机备份聊天导出（本人数据）</title><style>
-*{box-sizing:border-box}body{margin:0;width:1040px;height:700px;background:#f4f5f7;font-family:-apple-system,"PingFang SC","Helvetica Neue",sans-serif;color:#1d2129;padding:36px}
-.card{background:#fff;border-radius:20px;height:628px;padding:40px 48px;box-shadow:0 2px 14px rgba(0,0,0,.06);position:relative;display:flex;flex-direction:column}
-.brand{position:absolute;right:32px;top:24px;font-size:13px;color:#8a919c}
-h1{margin:0 0 12px;font-size:36px;font-weight:700}
-.desc{font-size:16px;line-height:1.6;color:#4e5560;margin:0 0 22px}
-h2{font-size:15px;color:#ff6a1a;margin:0 0 10px;letter-spacing:1px}
-ol{margin:0;padding:0;list-style:none;counter-reset:n}
-li{counter-increment:n;display:flex;gap:14px;font-size:16px;line-height:1.55;margin-bottom:12px}
-li:before{content:counter(n);flex:none;width:26px;height:26px;border-radius:50%;background:#fff1e8;color:#ff6a1a;font-weight:700;font-size:14px;text-align:center;line-height:26px;margin-top:1px}
-.fmt{margin-top:auto;background:#f4f5f7;border-radius:12px;padding:14px 18px;font-size:14px;line-height:1.5;color:#4e5560}.fmt b{color:#1d2129}
-</style><body><div class="card"><div class="brand">篝火出品</div><h1>手机备份聊天导出（本人数据）</h1><p class="desc">把自己 iPhone 备份里的微信聊天记录导出成 HTML / PDF / 文本，在电脑本地保存和查看，全程在本机处理。</p><h2>怎么用</h2><ol><li><span>用 iTunes（Mac 用访达）把 iPhone 备份到电脑，备份时不要设置加密口令</span></li><li><span>解压下载的压缩包，运行 WechatExport.exe（Windows）或 WechatExporter（Mac）</span></li><li><span>按界面提示选择备份和导出目录，以及要导出的聊天和格式</span></li><li><span>菜单「选项」里可设置页面加载方式、过滤功能和增量导出（只导出上次之后的新消息）</span></li></ol><div class="fmt"><b>交付形式　</b>桌面软件压缩包（Windows 64 位 / Mac x64），解压即用；导出 PDF 需要 Chrome 或 Edge</div></div></body></html>
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>手机备份聊天导出</title><style>
+*{box-sizing:border-box}body{margin:0;width:1040px;height:700px;font-family:-apple-system,"PingFang SC","Helvetica Neue",sans-serif;color:#10372b;background:#eefaf5;position:relative;overflow:hidden}
+h1{position:absolute;left:44px;top:32px;margin:0;font-size:32px;color:#0b7a56}
+.sub{position:absolute;left:44px;top:80px;font-size:15px;color:#3f6b5c}
+.tag{position:absolute;right:44px;top:38px;font-size:13px;color:#0b7a56;background:#d3f5e6;border-radius:20px;padding:6px 14px}
+.win{position:absolute;left:44px;top:128px;width:600px;height:430px;background:#f0f0f0;border:1px solid #8fb7a7;border-radius:6px;box-shadow:0 10px 30px rgba(11,122,86,.2);font-size:13px;color:#222;overflow:hidden}
+.tt{height:30px;background:linear-gradient(#e5f6ef,#bfe6d6);display:flex;align-items:center;padding:0 10px;font-size:13px;gap:8px;border-bottom:1px solid #9cc6b6}
+.tt i{margin-left:auto;display:flex;gap:4px}.tt i b{width:22px;height:16px;border-radius:3px;background:#fff;border:1px solid #9cc6b6}.tt i b:last-child{background:#e46a5c;border-color:#c0493c}
+.mn{height:24px;display:flex;gap:14px;align-items:center;padding:0 10px;background:#fafafa;border-bottom:1px solid #ddd}
+.lb{margin:8px 12px 3px;font-size:12px}
+.in{margin:0 12px;height:22px;border:1px solid #aaa;background:#fff;display:flex;align-items:center;padding:0 6px;font-size:12px;border-radius:2px}
+.row{display:flex;gap:10px;margin:8px 12px 0;height:228px}
+.tb{width:290px;border:1px solid #aaa;background:#fff}
+.tb .h,.tb .r{display:grid;grid-template-columns:24px 1fr 62px 80px;align-items:center;height:22px;font-size:12px;padding:0 4px;border-bottom:1px solid #eee}
+.tb .h{background:#f4f4f4;border-bottom:1px solid #ccc}
+.ck{width:12px;height:12px;border:1px solid #666;background:#fff;display:inline-block;border-radius:2px}.ck.on{background:#17D399;border-color:#0b7a56}
+.lg{flex:1;border:1px solid #aaa;background:#fff;font-size:11px;padding:6px;color:#555;line-height:1.6}
+.bt{position:absolute;right:12px;bottom:10px;display:flex;gap:10px}
+.bt span{width:78px;height:24px;border:1px solid #888;border-radius:3px;background:linear-gradient(#fafafa,#e3e3e3);text-align:center;line-height:22px;font-size:12px}
+.pb{position:absolute;left:12px;bottom:10px;width:250px;height:22px;border:1px solid #aaa;background:#e8e8e8;border-radius:3px;overflow:hidden}.pb i{display:block;width:62%;height:100%;background:#17D399}
+.side{position:absolute;left:668px;top:128px;width:328px;display:flex;flex-direction:column;gap:12px}
+.t{background:#fff;border-radius:14px;padding:14px 16px;box-shadow:0 2px 12px rgba(11,122,86,.1);font-size:14px;line-height:1.55;border-left:5px solid #17D399}
+.t b{display:block;font-size:12px;color:#0b7a56;margin-bottom:2px;letter-spacing:1px}
+.note{position:absolute;left:44px;top:578px;width:600px;font-size:13px;color:#3f6b5c;line-height:1.6}
+.warn{position:absolute;left:668px;top:586px;width:328px;background:#0b7a56;color:#fff;border-radius:14px;padding:14px 16px;font-size:14px;line-height:1.55}
+</style><body>
+<h1>手机备份聊天导出</h1><div class="sub">把自己 iPhone 备份里的微信聊天记录，导出到电脑本地保存</div><div class="tag">示意图 · 按上游中文界面文案绘制</div>
+<div class="win"><div class="tt"><span></span><i><b></b><b></b><b></b></i></div>
+<div class="mn"><span>文件(F)</span><span>选项(O)</span><span>帮助(H)</span></div>
+<div class="lb">iTunes 备份目录：</div><div class="in">iPhone 备份 2026-09-18 21:34:33</div>
+<div class="lb">聊天记录输出目录：</div><div class="in">D:\聊天记录备份</div>
+<div class="row"><div class="tb"><div class="h"><span class="ck on"></span><span>名称</span><span>记录数</span><span>微信账号</span></div>
+<div class="r"><span class="ck on"></span><span>家人群</span><span>1286</span><span>示例账号</span></div>
+<div class="r"><span class="ck on"></span><span>大学同学</span><span>342</span><span>示例账号</span></div>
+<div class="r"><span class="ck on"></span><span>工作交流群</span><span>2051</span><span>示例账号</span></div>
+<div class="r"><span class="ck on"></span><span>小陈</span><span>97</span><span>示例账号</span></div>
+<div class="r"><span class="ck"></span><span>文件传输助手</span><span>58</span><span>示例账号</span></div></div>
+<div class="lg">21:34:40 开始导出<br>21:34:41 正在导出：家人群<br>21:35:02 正在导出：大学同学</div></div>
+<div class="pb"><i></i></div><div class="bt"><span>导出(E)</span><span>关闭(X)</span></div></div>
+<div class="side"><div class="t"><b>第 1 步</b>用 iTunes（Mac 用访达）备份 iPhone，备份时不要设置加密口令</div><div class="t"><b>第 2 步</b>解压后运行，选择备份和输出目录</div><div class="t"><b>第 3 步</b>勾选要导出的聊天，选格式后点「导出」；「选项」里可开增量导出</div></div>
+<div class="note">导出格式：HTML、PDF、文本。Windows 版界面为中文，Mac 版跟随系统语言。</div>
+<div class="warn">只导出你本人的聊天记录，全程在本机处理，不要碰他人的备份。</div>
+</body></html>
